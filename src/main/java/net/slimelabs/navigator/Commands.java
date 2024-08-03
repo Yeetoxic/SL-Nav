@@ -23,7 +23,7 @@ public class Commands {
         public void execute(Invocation invocation) {
             CommandSource source = invocation.source();
             if (!(source instanceof Player)) {
-                source.sendMessage(Component.text("§cOnly players can run this command."));
+                source.sendMessage(Component.text("[§aSL-Nav§r] §cOnly players can run this command."));
                 return;
             }
 
@@ -41,15 +41,15 @@ public class Commands {
                         targetServerName = "minigames_lobby";
                         break;
                     default:
-                        player.sendMessage(Component.text("§cIncorrect Command Usage"));
-                        player.sendMessage(Component.text("§7Usage: /lobby <main|minigames>"));
+                        player.sendMessage(Component.text("[§aSL-Nav§r] §cIncorrect Command Usage"));
+                        player.sendMessage(Component.text("[§aSL-Nav§r] §7Usage: /lobby <main|minigames>"));
                         return;
                 }
             }
 
             if (player.getCurrentServer().isPresent() &&
                     player.getCurrentServer().get().getServer().getServerInfo().getName().equals(targetServerName)) {
-                player.sendMessage(Component.text("§cYou are already connected to this server."));
+                player.sendMessage(Component.text("[§aSL-Nav§r] §cYou are already connected to this server."));
                 return;
             }
 
@@ -57,9 +57,9 @@ public class Commands {
             targetServer.ifPresentOrElse(
                     srv -> {
                         player.createConnectionRequest(srv).connect();
-                        player.sendMessage(Component.text("§aConnecting to the " + targetServerName + "..."));
+                        player.sendMessage(Component.text("[§aSL-Nav§r] §aConnecting to the " + targetServerName + "..."));
                     },
-                    () -> player.sendMessage(Component.text("§cServer " + targetServerName + " not found."))
+                    () -> player.sendMessage(Component.text("[§aSL-Nav§r] §cServer " + targetServerName + " not found."))
             );
         }
 
@@ -84,7 +84,7 @@ public class Commands {
         public void execute(Invocation invocation) {
             CommandSource source = invocation.source();
             if (!(source instanceof Player)) {
-                source.sendMessage(Component.text("§cOnly players can run this command."));
+                source.sendMessage(Component.text("[§aSL-Nav§r] §cOnly players can run this command."));
                 return;
             }
 
@@ -94,7 +94,7 @@ public class Commands {
                 final String serverName = SL_Nav.lastServer.get(playerUUID);
                 if (player.getCurrentServer().isPresent() &&
                         player.getCurrentServer().get().getServer().getServerInfo().getName().equals(serverName)) {
-                    player.sendMessage(Component.text("§cYou are already connected to this server."));
+                    player.sendMessage(Component.text("[§aSL-Nav§r] §cYou are already connected to this server."));
                     return;
                 }
 
@@ -102,12 +102,12 @@ public class Commands {
                 server.ifPresentOrElse(
                         srv -> {
                             player.createConnectionRequest(srv).connect();
-                            player.sendMessage(Component.text("§aConnecting to the previous server..."));
+                            player.sendMessage(Component.text("[§aSL-Nav§r] §aConnecting to the previous server..."));
                         },
-                        () -> player.sendMessage(Component.text("§cPrevious server not found."))
+                        () -> player.sendMessage(Component.text("[§aSL-Nav§r] §cPrevious server not found."))
                 );
             } else {
-                player.sendMessage(Component.text("§3You don't have a previous server to return to."));
+                player.sendMessage(Component.text("[§aSL-Nav§r] §3You don't have a previous server to return to."));
             }
         }
     }

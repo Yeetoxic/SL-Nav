@@ -6,7 +6,7 @@
 
     <groupId>net.slimelabs</groupId>
     <artifactId>SL_Nav</artifactId>
-    <version>v2</version>
+    <version>v2.1</version>
     <packaging>jar</packaging>
 
     <name>SL_Nav</name>

@@ -12,9 +12,9 @@ import java.util.UUID;
 
 @Plugin(
         id = "navigator",
-        name = "SL_Nav",
-        version = "v2",
-        description = "Server Navigation plugin. Version 2.0 by protoxon & Yeetoxic",
+        name = "SL-Nav",
+        version = "v2.1",
+        description = "Server Navigation plugin. Version 2.1 by protoxon & Yeetoxic",
         authors = {"protoxon & Yeetoxic"}
 )
 public class SL_Nav {
@@ -49,7 +49,7 @@ public class SL_Nav {
                 GREEN + "  ____) | |____    | |\\  |/ ____ \\  /   _| || |__| |/ ____ \\| | | |__| | | \\ \\ \n" +
                 GREEN + " |_____/|______|   |_| \\_/_/    \\_\\/   |_____\\_____/_/    \\_\\_|  \\____/|_|  \\_\\\n" + RESET +
                 "\n" +
-                "[" + GREEN + "SL_NAV" + RESET + "]" + CYAN + " SlimeLabs Server Navigation Plugin " + RESET + YELLOW + "Version 2.0" + RESET + CYAN +" by " + RESET + BLUE + "protoxon" + RESET + CYAN + " & " + RESET + BLUE + "Yeetoxic" + RESET + "\n" +
+                "[" + GREEN + "SL-NAV" + RESET + "]" + CYAN + " SlimeLabs Server Navigation Plugin " + RESET + YELLOW + "Version 2.1" + RESET + CYAN +" by " + RESET + BLUE + "protoxon" + RESET + CYAN + " & " + RESET + BLUE + "Yeetoxic" + RESET + "\n" +
                 " \n" + CYAN + "————————————————————————————————————————————————");
 
         server.getCommandManager().register(server.getCommandManager().metaBuilder("lobby").aliases("hub").build(), new Commands.Lobby(server));
